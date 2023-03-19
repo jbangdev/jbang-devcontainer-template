@@ -1,11 +1,12 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
+//DEPS com.github.lalyos:jfiglet:0.0.8
 
+import com.github.lalyos.jfiglet.FigletFont;
 
-import static java.lang.System.*;
+class hello {
 
-public class main {
-
-    public static void main(String... args) {
-        out.println("Hello World");
+    public static void main(String... args) throws Exception {
+        System.out.println(FigletFont.convertOneLine(
+               "Hello " + ((args.length>0)?args[0]:"jbang"))); 
     }
 }
